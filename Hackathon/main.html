@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 style="font-size: xx-large;color: azure;">Have you been experiencing any of the following lately?</h1>
+    <br>
+
+    <script>
+        const categories = [
+            { title: "Physical Symptoms", options: ["Headache", "Muscle tension", "Fatigue", "Gastrointestinal issues", "Rapid heartbeat", "Unusual/Over sweating", "Changes in appetite", "Changes in sleep patterns"] },
+            { title: "Emotional Symptoms", options: ["Irritability", "Mood swings", "Feeling overwhelmed", "Sense of hopelessness"] },
+            { title: "Behavioral Changes", options: ["Agitation", "Withdrawal From Social Activities", "Experiencing conflicts with others","Restlessness", "Nail Biting"]},
+            { title: "Cognitive Symptoms", options: ["Difficulties with Concentration", "Memory Issues", "Indecisiveness", "Raising Thoughts"]},
+            { title: "Life Events", options: ["Job Loss", "Financial Strain", "Relationship problems", "Illness (of any kind)", "Any bereavement", "Opt if you experienced any of these major life transition lately: Moving to a new city/ New job/ Marriage/ Childbirth/Retirement)"]},
+            { title: "Does your accomodation or workspace have any of these?", options: ["Noise", "Overcrowding", "Chaotic Surroundings"]},
+            { title: "Have you been practising any of these?", options: ["Not excercising regularly","Not meditating regularly","Not seeking social support","Substance abuse"]}
+        ];
+
+        categories.forEach(category => {
+            document.write(`<br><section>
+                                <h1>${category.title}</h1>
+                                <br><br>`);
+
+            category.options.forEach((option, index) => {
+                const id = option.toLowerCase().replace(/\s/g, ''); 
+                document.write(`<input type="checkbox" id="${id}" value="1">
+                                <label for="${id}">${option}</label>
+                                <br>`);
+            });
+
+            document.write(`</section>`);
+        });
+
+
+        const categories2=[
+            {title: "How is your relation with friends/ family/ colleagues/ support groups overall?", options: ["Excellent","Great","Fairly good","Not Good","Bad"]},
+            { title: "How would you describe your overall self-image?", options: ["Very positive", "Mostly positive", "Neutral","Mostly negative","Very negative"]},
+            { title: "How much control do you believe you have over overcoming obstacles in your life?", options:["Complete control","A lot of control","Some control", "Little control","No control"]},
+            { title: "On average, how many hours of sleep do you get per night?", options:["More than 8 hours","7-8 hours","6-7 hours","5-6 hours","Less than 5 hours"]},
+            { title: "How long does it take you to fall asleep after getting into bed?", options:["Less than 15 minutes","15-30 minutes","30-45 minutes","45-60 minutes","More than 60 minutes"]},
+            { title: "How often do you wake up during night?", options:["Never","Rarely(Once or Twice)","Occassionaly(3-4 times)","Frequently(5-6 times)","Very frequently(more than 6 times)"]},
+            { title: "How would you rate your overall quality of sleep in the last week?", options: ["Excellent", "Good","Fair","Poor","Very Poor"]},
+            { title: "How often do you take out time for leisure relaxation activities or creative expression?",options:["Always","Most of the time","Sometimes","Hardly","Never"]},
+            { title: "What is your daily screen time?",options:["Less than an hour","1-2 hours","2-4 hours","4-6hours","More than 6 hours"]},
+            { title: "How often do you check your smartphone for messages, emails, or notifications throughout the day?",options: ["Rarely or Never","Occassionaly","Frequently","Very Frequently","Always"]},
+
+        ]
+
+
+        categories2.forEach(category => {
+            document.write(`<br><section>
+                                <h1>${category.title}</h1>
+                                <br><br>`);
+
+            category.options.forEach((option, index) => {
+                const id = option.toLowerCase().replace(/\s/g, ''); 
+                document.write(`<input type="radio" id="${id}" value="1">
+                                <label for="${id}">${option}</label>
+                                <br>`);
+            });
+
+            document.write(`</section>`);
+        });
+        function submitAnswer(){
+        const selectedOption = document.querySelector('input[name="answer"]:checked');
+    }
+    </script>
+
+<button class="btn" onclick="submitAnswer()">Submit Answer</button>
+
+</body>
+</html>

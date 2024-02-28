@@ -1,0 +1,30 @@
+body{
+    background: url("https://wallpapercave.com/wp/wp6992028.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+h1,h2{
+    text-align: center;
+    border: solid black 5px;
+    width: 40%;
+    margin: auto;
+    
+}
+
+h1,h2,label{
+    color: white;
+}
+h1{
+    font-size: 30px;
+}
+label{
+    font-size: 24px;
+}
+section{
+    text-align: center;
+    
+    
+}

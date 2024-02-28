@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eisenhower Matrix</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .matrix {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .quadrant {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+  h2 {
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .delete-button {
+    background-color: #ff9999;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>Eisenhower Matrix</h1>
+<div class="matrix">
+  <div class="quadrant" id="important-urgent">
+    <h2>Important & Urgent</h2>
+    <ul id="importantUrgentList"></ul>
+  </div>
+  <div class="quadrant" id="important-not-urgent">
+    <h2>Important & Not Urgent</h2>
+    <ul id="importantNotUrgentList"></ul>
+  </div>
+  <div class="quadrant" id="not-important-urgent">
+    <h2>Not Important & Urgent</h2>
+    <ul id="notImportantUrgentList"></ul>
+  </div>
+  <div class="quadrant" id="not-important-not-urgent">
+    <h2>Not Important & Not Urgent</h2>
+    <ul id="notImportantNotUrgentList"></ul>
+  </div>
+</div>
+<div>
+  <input type="text" id="taskInput" placeholder="Enter task...">
+  <input type="checkbox" id="reminderCheckbox">
+  <label for="reminderCheckbox">Set Reminder</label>
+  <input type="date" id="deadlineInput">
+  <button onclick="addTask()">Add Task</button>
+</div>
+
+<script>
+  function addTask() {
+    var taskInput = document.getElementById("taskInput");
+    var task = taskInput.value.trim();
+    var reminderCheckbox = document.getElementById("reminderCheckbox");
+    var deadlineInput = document.getElementById("deadlineInput");
+    var deadline = deadlineInput.value;
+    if (task !== "") {
+      var quadrant = prompt("Enter quadrant (1-4):");}}
